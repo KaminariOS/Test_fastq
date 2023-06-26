@@ -106,7 +106,7 @@ fn main() {
     let mut strip = 0;
     let mut total = 0usize;
     let mut kmer_count = 0;
-    let mut map = HashMap::with_capacity(1 << 20);
+    // let mut map = HashMap::with_capacity(1 << 20);
     for result in reader.records() {
         let record = result.expect("Error during fastq record parsing");
         let seq = record.seq();
@@ -124,7 +124,7 @@ fn main() {
         }
         for kmer in kmer_iterator {
             kmer_count += 1;
-            *map.entry(kmer).or_insert(0) += 1usize;
+            // *map.entry(kmer).or_insert(0) += 1usize;
         }
         nb_reads += 1;
         nb_bases += seq.len();
@@ -140,5 +140,5 @@ fn main() {
     println!("Number of bases: {}", nb_bases);
 
     let file = File::create("map.json").unwrap();
-    serde_json::to_writer(file, &map).unwrap();
+    // serde_json::to_writer(file, &map).unwrap();
 }

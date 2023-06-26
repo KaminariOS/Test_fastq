@@ -9,7 +9,7 @@ pub struct Args {
     pub filename: String,
 
     /// Number of times to greet
-    #[arg(short, long, default_value_t = 1)]
+    #[arg(short, long, default_value_t = 32)]
     pub k: u8,
 }
 

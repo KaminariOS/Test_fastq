@@ -39,7 +39,7 @@ devShell = pkgs.mkShell rec {
     "fortify"
   ];
   nativeBuildInputs = [
-        pinnedRust cargoExpand
+        pinnedRust 
   ];
   buildInputs = with pkgs; [
 #    alsaLib
